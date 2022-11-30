@@ -23,3 +23,7 @@ def addContact(request):
 def contactProfile(request, pk):
     contact = Contact.objects.get(id=pk)
     return render(request, 'contact-profile.html', {'contact': contact})
+
+def editContact(request, pk):
+    contact = Contact.objects.get(id=pk)
+    return render(request, 'edit.html', {'contact': contact})

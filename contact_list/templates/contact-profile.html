@@ -33,29 +33,20 @@
 				<p class="phone-number">{{ contact.phone_nummber }}</p>
 			</div>
 
-		
 
 			<div class="info-line">
 				<i class="fas fa-sms icon-gradient"></i>
 				<p class="sms">{{ contact.email }}</p>
 			</div>
 
-			
 
-			<div class="info-line">
-				<i class="fas fa-envelope icon-gradient"></i>
-				<p class="email">{{ contact.address }}</p>
-			</div>
 
-			
-
-			<div class="info-line">
+			<div id="address-info" class="info-line">
 				<i id="location" class="fas fa-map-marker-alt icon-gradient"></i>
-				<p class="address">888 Example St</p>
+				<p class="address">{{ contact.address }}</p>
 			</div>
-		</section>
 
-		<a href="edit.html">
+		<a href="{% url 'edit-contact' contact.id %}">
 			<section class="edit-contact">
 				<div class="edit-button">
 					<i class="fas fa-cog icon-gradient"></i>
