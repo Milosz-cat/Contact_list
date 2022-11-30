@@ -38,3 +38,12 @@ def editContact(request, pk):
         return redirect('/profile/'+str(contact.id))
 
     return render(request, 'edit.html', {'contact': contact})
+
+def deleteContact(request, pk):
+    contact = Contact.objects.get(id=pk)
+
+    if request.method == 'POST':
+        contact.delete()
+        return redirect('/')
+
+    return render(request, 'delete.html', {'contact': contact})
